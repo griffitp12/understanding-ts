@@ -1,19 +1,10 @@
-enum Role {ADMIN, READ_ONLY, AUTHOR};
-
-const person/* : {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string]
-} */ = {
-    name: "Pete",
-    age: 37,
-    hobbies: ["running", "games"],
-    role: Role.ADMIN
+function combine(input1: number | string, input2: number | string): number | string {
+  const result = input1 + input2;
+  return result;
 }
 
-console.log(person.name)
+const combinedAges = combine(19, 23)
+console.log(combinedAges)
 
-for (let hobby of person.hobbies) {
-    console.log(hobby)
-}
+const combinedNames = combine("Pete ", "Griffith")
+console.log(combinedNames)
