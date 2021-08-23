@@ -1,18 +1,18 @@
-let userInput: unknown;
-let userName: string;
+class Department {
+  name: string;
+  private employees: string[] = []
+  constructor(n: string) {
+    this.name = n;
+  }
+  addEmployee(employee: string) {
+      this.employees.push(employee)
+  }
+  describe() {
+      console.log("Department: " + this.name )
+  }
 
-userInput = 5; 
-userInput = "pete";
-
-if(typeof userInput === 'string') {
-    userName = userInput;
 }
 
+let program = new Department('Program');
 
-function generateError(message: string, code: number): never {
-    throw {message: message, errorCode: code};
-    /* while (true) {} */
-}
-
-generateError("an error!", 500)
-
+console.log(program.describe());

@@ -1,4 +1,4 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string): number | string {
+function add(n1: number, n2: number, showResult: boolean, phrase: string): string | void {
   if (showResult) {
     console.log(`${phrase} ${n1 + n2}`);
   } else {
