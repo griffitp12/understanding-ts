@@ -1,6 +1,9 @@
 class Department {
   protected employees: string[] = [];
   constructor(private name: string, private readonly id: string) {}
+  static createEmployee(name:string) {
+    return {name: name}
+  }
   describeBasics() {
     console.log(`Department (${this.id}): ${this.name}`);
   }
@@ -86,3 +89,6 @@ const macbook1: Computer = { serialNo: 'chf6nch', purchaseYear: 2021 };
 IT.mostRecentComputer = macbook1;
 IT.listComputers();
 console.log(IT.mostRecentComputer);
+
+const employee1 = Department.createEmployee("Mone")
+console.log(employee1)
