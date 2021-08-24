@@ -16,7 +16,7 @@ class Department {
   }
 } /*  */
 
-type Computer = { serialNo: string; purchaseYear: number };
+interface Computer { serialNo: string; purchaseYear: number };
 
 class ITDepartment extends Department {
   private lastComputer: Computer;
