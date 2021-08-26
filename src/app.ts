@@ -109,3 +109,10 @@ const a2: Animal = {
 
 moveAnimal(a1);
 moveAnimal(a2);
+
+// const userInputElement = <HTMLInputElement>document.querySelector('#user-input');
+const userInputElement = document.querySelector('#user-input');
+
+if (userInputElement) {
+    (userInputElement as HTMLInputElement).value = 'hi there'
+}
