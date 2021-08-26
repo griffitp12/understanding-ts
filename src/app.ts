@@ -21,6 +21,10 @@ type Numeric = number | boolean;
 
 type Universal = Combinable & Numeric;
 
+function addAgain(a: number, b: number): number;
+function addAgain(a: string, b: string): string;
+function addAgain(a: number, b: string): string;
+function addAgain(a: string, b: number): string;
 function addAgain(a: Combinable2, b: Combinable2) {
   if (typeof a === 'string' || typeof b === 'string') {
     return a.toString() + b.toString();
@@ -28,7 +32,11 @@ function addAgain(a: Combinable2, b: Combinable2) {
   return a + b;
 }
 
-type UnknownEmployee = Employee | Admin;
+const result = addAgain("Pete", 'Griffith')
+result.split(' ')
+
+
+/* type UnknownEmployee = Employee | Admin;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
   console.log('Name: ' + emp.name);
@@ -124,4 +132,6 @@ interface ErrorContainer {
 const errorBag: ErrorContainer = {
     email: "not a valid email",
     username: 'not a valid username'
-}
+};
+
+ */
