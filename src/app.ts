@@ -116,3 +116,12 @@ const userInputElement = document.querySelector('#user-input');
 if (userInputElement) {
     (userInputElement as HTMLInputElement).value = 'hi there'
 }
+
+interface ErrorContainer {
+    [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+    email: "not a valid email",
+    username: 'not a valid username'
+}
