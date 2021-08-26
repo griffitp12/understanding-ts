@@ -32,9 +32,19 @@ function addAgain(a: Combinable2, b: Combinable2) {
   return a + b;
 }
 
-const result = addAgain("Pete", 'Griffith')
-result.split(' ')
+const result = addAgain('Pete', 'Griffith');
+result.split(' ');
 
+const fetchedUserData = {
+  id: 'u1',
+  name: 'Pete',
+  /* job: {
+    title: 'CEO',
+    description: 'My company',
+  }, */
+}; 
+
+console.log(fetchedUserData?.job?.title)
 
 /* type UnknownEmployee = Employee | Admin;
 
