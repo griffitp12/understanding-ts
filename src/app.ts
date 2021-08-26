@@ -38,14 +38,19 @@ result.split(' ');
 const fetchedUserData = {
   id: 'u1',
   name: 'Pete',
-  /* job: {
+  job: {
     title: 'CEO',
     description: 'My company',
-  }, */
-}; 
+  },
+};
 
-console.log(fetchedUserData?.job?.title)
+console.log(fetchedUserData?.job?.title);
 
+const userInput = '';
+
+const storedData = userInput ?? 'DEFAULT';
+
+console.log(storedData)
 /* type UnknownEmployee = Employee | Admin;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
