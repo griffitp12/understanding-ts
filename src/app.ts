@@ -1,43 +1,34 @@
-/* const names: Array<string> = [] // string[]
-// names[0].split(' ');
+class DataStorage<T extends string | number | boolean> {
+  private data: T[] = [];
 
-const promise: Promise<string> = new Promise((resolve, reject) => {
-    setTimeout(()=> {
-        resolve("this is fun!")
-    }, 2000)
-});
+  addItem(item: T) {
+    this.data.push(item);
+  } /*  */
 
-promise.then(data => {
-    data.split(' ');
-}) */
-
-function merge<T extends object, U extends object>(objA: T, objB: U) {
-  return Object.assign(objA, objB);
-}
-
-const mergedObj = merge({ name: 'pete' }, { age: 37 })
-console.log(mergedObj.age)
-
-interface lengthy {
-    length: number
-}
-
-function countAndDescribe<T extends lengthy>(element: T): [T, string] {
-    let descriptionText = 'Got no value';
-    if (element.length === 1) {
-        descriptionText = 'Got 1 element'
-    } else if (element.length > 1) {
-        descriptionText = 'Got ' + element.length + ' elements'
+  removeItem(item: T) {
+    if (this.data.indexOf(item) === -1) {
+      return;
     }
-    return [element, descriptionText];
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
 }
 
-const result1 = countAndDescribe([2,1])
-console.log(result1)
+const textStorage = new DataStorage<string>();
+textStorage.addItem('pete');
+/* console.log(textStorage.getItems()) */
 
-function extractAndConvert<T extends object, U extends keyof T>(obj:T, key:U) {
-    return 'Value: ' + obj[key]
-}
+const numberStorage = new DataStorage<number>();
 
-let result2 = extractAndConvert({name: 'pete'}, 'name')
-console.log(result2)
+/* const objStorage = new DataStorage<object>();
+
+objStorage.addItem({ name: 'pete' });
+objStorage.addItem({ name: 'shin' });
+
+objStorage.removeItem({ name: 'pete' });
+
+console.log(objStorage.getItems());
+ */
